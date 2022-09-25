@@ -15,7 +15,8 @@ public:
     Clock();
     void draw(int dx, int dy, float scaleFactor);
     void setTimeZone(int hoursFromGMT);
-    struct tm* getTime();
+    static float timeToDeg(struct tm* lt, int unit);
+    struct tm* getTimeStruct();
 };
 
 

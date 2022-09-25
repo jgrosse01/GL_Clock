@@ -5,7 +5,7 @@
 #include "Color.h"
 #include <random>
 
-int* rgba_arr;
+int rgba_arr[4];
 static int black[4] = {0,0,0,0};
 
 void Color::makeRandomColor(int alpha = 255) {
@@ -34,12 +34,20 @@ Color::Color(int* rgba, bool alpha) {
 }
 
 Color::Color(int red, int green, int blue) {
-    int color[4] = {red, green, blue, 255};
+    int* color = new int[4];
+    color[0] = red;
+    color[1] = green;
+    color[2] = blue;
+    color[3] = 255;
     Color::rgba_arr = color;
 }
 
 Color::Color(int red, int green, int blue, int alpha) {
-    int color[4] = {red, green, blue, alpha};
+    int* color = new int[4];
+    color[0] = red;
+    color[1] = green;
+    color[2] = blue;
+    color[3] = alpha;
     Color::rgba_arr = color;
 }
 

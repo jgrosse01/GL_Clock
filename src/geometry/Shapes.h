@@ -6,14 +6,18 @@
 #define SHAPES_H
 
 #include "../Color/Color.h"
+#include <cmath>
+#include <GL/freeglut.h>
+#include <ctime>
 
 void clockTicks(int dx, int dy, float scaleFactor);
 
-void clockHands(int dx, int dy, float scaleFactor, Color* color);
+void clockHands(int dx, int dy, time_t time, float scaleFactor);
 
-void hourHand(int dx, int dy, float scaleFactor, Color color);
-void minuteHand(int dx, int dy, float scaleFactor, Color color);
-void secondHand(int dx, int dy, float scaleFactor, Color color);
+void hand(int dx, int dy, float deg, float scaleFactor, float lineWidth, Color* color, float radiusScale);
+void hourHand(int dx, int dy, float deg, float scaleFactor, Color* color);
+void minuteHand(int dx, int dy, float deg, float scaleFactor, Color* color);
+void secondHand(int dx, int dy, float deg, float scaleFactor, Color* color);
 
 void ssdHorizontalBlock(int dx, int dy, float scaleFactor);
 void ssdVerticalBlock(int dx, int dy, float scaleFactor);
@@ -21,6 +25,5 @@ void ssdVerticalBlock(int dx, int dy, float scaleFactor);
 void circle(int dx, int dy, float scaleFactor, Color* color);
 
 float degToRad(float deg);
-float radToDeg(float rad);
 
 #endif //SHAPES_H
